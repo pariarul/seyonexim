@@ -3,7 +3,7 @@ import { WhatsApp } from '@mui/icons-material';
 import { IconButton, Box } from '@mui/material';
 
 const ContactBox = () => {
-  const whatsapp = "https://wa.me/1234567890";
+  const whatsapp = "https://wa.me/8508053419";
 
   const iconGreen = '#047857';
   const backgroundWhite = '#ffffff';

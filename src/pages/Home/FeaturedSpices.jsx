@@ -4,6 +4,7 @@ import { useState, useRef } from "react"
 import { Mail, ShoppingBasket } from "lucide-react"
 
 import jsondata from "../../spices.json"
+import CertificationEnquiry from "../../components/CertificationEnquiry"
 
 
 
@@ -130,17 +131,7 @@ export default function SpiceCatalogue() {
       </div>
     </section>
           {/* Contact for Certificates */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass card p-12 border border-gray-300 bg-white">
-            <h2 className="text-3xl font-playfair font-bold text-green-600 mb-4">Need Specific Certifications?</h2>
-            <p className="text-xl text-black mb-8">
-              We can provide additional certifications or documentation to meet your specific market requirements.
-            </p>
-            <button className="btn bg-green-600 text-white px-8 py-4 text-lg">Contact Our Quality Team</button>
-          </div>
-        </div>
-      </section>
+<CertificationEnquiry />
     </div>
   )
 }

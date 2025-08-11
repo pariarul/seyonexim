@@ -139,19 +139,19 @@ export default function Sidebar() {
             <div className="space-y-3">
               <div className="flex items-center text-sm">
                 <Mail size={16} color={green} className="mr-3" />
-                <span className="truncate">hello@spicevault.com</span>
+                <span className="truncate">support@seyonexim.com</span>
               </div>
               <div className="flex items-center text-sm">
                 <Phone size={16} color={green} className="mr-3" />
-                <span>+91 98765 43210</span>
+                <span>+91 9363586810</span>
               </div>
               <div className="flex items-center text-sm">
-                <MapPin size={16} color={green} className="mr-3" />
-                <span>Kochi, Kerala</span>
+                <MapPin size={36} color={green} className="mr-3" />
+                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamilnadu -624619</span>
               </div>
               <div className="flex items-center text-sm">
                 <Globe size={16} color={green} className="mr-3" />
-                <span>50+ Countries</span>
+                <span>5+ Countries</span>
               </div>
             </div>
           </div>
@@ -223,15 +223,15 @@ export default function Sidebar() {
             <div className="space-y-2">
               <div className="flex items-center text-xs">
                 <Mail size={12} color={green} className="mr-2" />
-                <span className="truncate">hello@spicevault.com</span>
+                <span className="truncate">support@seyonexim.com</span>
               </div>
               <div className="flex items-center text-xs">
                 <Phone size={12} color={green} className="mr-2" />
-                <span>+91 98765 43210</span>
+                <span>+91 9363586810</span>
               </div>
               <div className="flex items-center text-xs">
-                <MapPin size={12} color={green} className="mr-2" />
-                <span>Kochi, Kerala</span>
+                <MapPin size={22} color={green} className="mr-2" />
+                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamil nadu - 624619</span>
               </div>
             </div>
           </div>

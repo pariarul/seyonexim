@@ -1,8 +1,8 @@
 import { Globe, Award, Star, Truck } from "lucide-react"
 
 const stats = [
-  { icon: Globe, value: "50+", label: "Countries Served" },
-  { icon: Award, value: "25+", label: "Years Experience" },
+  { icon: Globe, value: "5+", label: "Countries Served" },
+  { icon: Award, value: "1+", label: "Years Experience" },
   { icon: Star, value: "99.9%", label: "Quality Rate" },
   { icon: Truck, value: "24-48h", label: "Response Time" },
 ]

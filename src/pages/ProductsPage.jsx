@@ -16,8 +16,8 @@ import {
 } from "lucide-react"
 import Footer from "./Footer"
 import jsondata from "../spices.json"
-import ContactOurQuality from "../components/ContactOurQuality"
 import QualityPromise from "../components/QualityPromise"
+import CertificationEnquiry from "../components/CertificationEnquiry"
 
 const allSpices = jsondata
 const categories = [
@@ -408,9 +408,8 @@ export default function ProductsPage() {
 
       {/* Quality Promise Section and others */}
 <QualityPromise />
-      {/* Contact for Certificates */}
-
-<ContactOurQuality />
+          {/* Contact for Certificates */}
+<CertificationEnquiry />
 
       {/* Footer */}
       <Footer />

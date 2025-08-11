@@ -74,15 +74,15 @@ export default function Footer() {
           <ul className="space-y-4 text-gray-800">
             <li className="flex items-center gap-3">
               <Mail size={20} className="text-green-700 flex-shrink-0" />
-              <a href="mailto:hello@spicevault.com" className="hover:underline">hello@spicevault.com</a>
+              <a href="mailto:hello@spicevault.com" className="hover:underline">support@seyonexim.com</a>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={20} className="text-green-700 flex-shrink-0" />
-              <a href="tel:+919876543210" className="hover:underline">+91 98765 43210</a>
+              <a href="tel:+919876543210" className="hover:underline">+91 9363586810</a>
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={20} className="text-green-700 flex-shrink-0" />
-              Kochi, Kerala, India
+              1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamil nadu - 624619
             </li>
           </ul>
         </div>

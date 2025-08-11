@@ -5,6 +5,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Target, Eye, Users, Award, Globe, Leaf, Shield, Heart, Sparkles } from "lucide-react"
 import Footer from "./Footer"
+import CertificationEnquiry from "../components/CertificationEnquiry"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -34,18 +35,46 @@ const values = [
 ]
 
 const milestones = [
-  { year: "1998", title: "Foundation", description: "Started as a family spice trading business in Kochi" },
-  { year: "2005", title: "Export License", description: "Obtained international export certification" },
-  { year: "2012", title: "ISO Certification", description: "Achieved ISO 22000 food safety standards" },
-  { year: "2018", title: "Organic Line", description: "Launched certified organic spice collection" },
-  { year: "2023", title: "Global Expansion", description: "Expanded to 50+ countries with modern facility" },
+  {
+    year: "2024",
+    title: "The Spark",
+    description:
+      "Started as a college idea while exploring the world of spices for a class project.",
+  },
+  {
+    year: "2024",
+    title: "First Small Batch",
+    description:
+      "Experimented in our hostel kitchen, blending spices for friends and family.",
+  },
+  {
+    year: "2025",
+    title: "Official Launch",
+    description:
+      "Turned the college project into a real business and launched our first online store.",
+  },
+  {
+    year: "2025",
+    title: "First 50 Orders",
+    description:
+      "Reached our first milestone with orders coming from friends, social media, and word of mouth.",
+  },
+  {
+    year: "2025",
+    title: "Growing Ambitions",
+    description:
+      "Planning to expand our spice range while balancing college life and entrepreneurship.",
+  },
 ]
+
 
 export default function AboutPage() {
   const heroRef = useRef(null)
   const visionRef = useRef(null)
   const valuesRef = useRef(null)
   const timelineRef = useRef(null)
+
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -82,28 +111,29 @@ export default function AboutPage() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <div
-            className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8"
-            style={{ border: "1px solid rgba(107, 114, 128, 0.3)" }}
-          >
-            <Sparkles size={20} color="green" />
-            <span className="text-black font-medium">Our Story Since 1998</span>
-          </div>
+<section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 py-20">
+  <div className="max-w-6xl mx-auto text-center">
+    <div
+      className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8"
+      style={{ border: "1px solid rgba(107, 114, 128, 0.3)" }}
+    >
+      <Sparkles size={20} color="green" />
+      <span className="text-black font-medium">Our Journey Begins – 2024</span>
+    </div>
 
-          <h1 className="about-hero-title text-5xl md:text-7xl font-playfair font-bold mb-8">
-            <span className="text-green-600">About</span>
-            <br />
-            <span className="text-black">SpiceVault</span>
-          </h1>
+    <h1 className="about-hero-title text-5xl md:text-7xl font-playfair font-bold mb-8">
+      <span className="text-green-600">About</span>
+      <br />
+      <span className="text-black">Seyon Exim</span>
+    </h1>
 
-          <p className="about-hero-subtitle text-xl md:text-2xl text-black max-w-4xl mx-auto">
-            25+ years of excellence in premium spice trading, connecting India's finest spices with global markets
-            through quality, sustainability, and trust.
-          </p>
-        </div>
-      </section>
+    <p className="about-hero-subtitle text-xl md:text-2xl text-black max-w-4xl mx-auto">
+      We’re a young and passionate spice startup, bringing the authentic flavors of India to the world.  
+      Born in 2024, we aim to redefine spice sourcing with freshness, fairness, and a dash of innovation.
+    </p>
+  </div>
+</section>
+
 
       {/* Vision & Mission */}
       <section className="py-20 px-6">
@@ -204,37 +234,41 @@ export default function AboutPage() {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-green-600 mb-6">Our Journey</h2>
-            <p className="text-xl text-black">
-              25+ years of growth, innovation, and building trust in the global spice market.
-            </p>
-          </div>
+<section className="py-20 px-6">
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-playfair font-bold text-green-600 mb-6">Our Journey</h2>
+      <p className="text-xl text-black">
+        From college project to a growing spice brand — powered by passion, curiosity, and a big dream.
+      </p>
+    </div>
 
-          <div ref={timelineRef} className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-green-600"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone) => (
-                <div key={milestone.year} className="timeline-item relative flex items-start gap-8">
-                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-bold shadow-xl">
-                    {milestone.year.slice(-2)}
-                  </div>
-                  <div className="flex-1 glass card p-6" style={{ border: "1px solid rgba(107, 114, 128, 0.2)" }}>
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-lg font-bold text-green-600">{milestone.year}</span>
-                      <div className="h-px bg-green-600 flex-1"></div>
-                    </div>
-                    <h3 className="text-xl font-bold text-black mb-2">{milestone.title}</h3>
-                    <p className="text-black">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
+    <div ref={timelineRef} className="relative">
+      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-green-600"></div>
+      <div className="space-y-12">
+        {milestones.map((milestone) => (
+          <div key={milestone.year} className="timeline-item relative flex items-start gap-8">
+            <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-bold shadow-xl">
+              {milestone.year.slice(-2)}
+            </div>
+            <div
+              className="flex-1 glass card p-6"
+              style={{ border: "1px solid rgba(107, 114, 128, 0.2)" }}
+            >
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-lg font-bold text-green-600">{milestone.year}</span>
+                <div className="h-px bg-green-600 flex-1"></div>
+              </div>
+              <h3 className="text-xl font-bold text-black mb-2">{milestone.title}</h3>
+              <p className="text-black">{milestone.description}</p>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Team Stats */}
       <section className="py-20 px-6">
@@ -249,12 +283,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="glass card p-6 text-center card-3d" style={{ border: "1px solid rgba(107, 114, 128, 0.2)" }}>
               <Users size={48} color="green" className="mx-auto mb-3" />
-              <div className="text-3xl font-bold text-green-600 mb-1">500+</div>
+              <div className="text-3xl font-bold text-green-600 mb-1">250+</div>
               <div className="text-sm text-black">Farmer Partners</div>
             </div>
             <div className="glass card p-6 text-center card-3d" style={{ border: "1px solid rgba(107, 114, 128, 0.2)" }}>
               <Globe size={48} color="green" className="mx-auto mb-3" />
-              <div className="text-3xl font-bold text-green-600 mb-1">50+</div>
+              <div className="text-3xl font-bold text-green-600 mb-1">5+</div>
               <div className="text-sm text-black">Countries Served</div>
             </div>
             <div className="glass card p-6 text-center card-3d" style={{ border: "1px solid rgba(107, 114, 128, 0.2)" }}>
@@ -270,18 +304,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-            {/* Contact for Certificates */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass card p-12 border border-gray-300 bg-white">
-            <h2 className="text-3xl font-playfair font-bold text-green-600 mb-4">Need Specific Certifications?</h2>
-            <p className="text-xl text-black mb-8">
-              We can provide additional certifications or documentation to meet your specific market requirements.
-            </p>
-            <button className="btn bg-green-600 text-white px-8 py-4 text-lg">Contact Our Quality Team</button>
-          </div>
-        </div>
-      </section>
+           
+          {/* Contact for Certificates */}
+<CertificationEnquiry />
       {/* Footer */}
       <Footer />
     </div>

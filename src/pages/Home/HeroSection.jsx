@@ -11,11 +11,11 @@ export default function HeroSection() {
           style={{ border: "1px solid rgba(255,255,255,0.3)" }}
         >
           <Sparkles size={20} color="white" />
-          <span className="font-medium">Premium Spice Exporters Since 1998</span>
+          <span className="font-medium">Premium Spice Exporters Since 2025</span>
         </div>
 
         <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-playfair font-bold mb-8 text-white">
-          <span>SpiceVault</span>
+          <span>Seyon Exim</span>
           <br />
           <span className="text-white">Global Excellence</span>
         </h1>

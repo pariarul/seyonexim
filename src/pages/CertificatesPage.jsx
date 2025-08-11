@@ -5,23 +5,13 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Shield, Leaf, Globe, CheckCircle, Download, Eye, Sparkles } from "lucide-react"
 import Footer from "./Footer"
+import CertificationEnquiry from "../components/CertificationEnquiry"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
 
 const certificates = [
-  {
-    name: "ISO 22000:2018",
-    type: "Food Safety Management",
-    issuer: "Bureau Veritas",
-    validUntil: "December 2025",
-    description: "International standard for food safety management systems covering the entire food chain.",
-    icon: Shield,
-    color: "from-green-400 to-green-600",
-    image: "/api/placeholder/400/300",
-    scope: ["Food Safety", "HACCP", "Quality Management", "Risk Assessment"],
-  },
   {
     name: "USDA Organic",
     type: "Organic Certification",
@@ -256,18 +246,8 @@ export default function CertificatesPage() {
         </div>
       </section>
 
-      {/* Contact for Certificates */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass card p-12 border border-gray-300 bg-white">
-            <h2 className="text-3xl font-playfair font-bold text-green-600 mb-4">Need Specific Certifications?</h2>
-            <p className="text-xl text-black mb-8">
-              We can provide additional certifications or documentation to meet your specific market requirements.
-            </p>
-            <button className="btn bg-green-600 text-white px-8 py-4 text-lg">Contact Our Quality Team</button>
-          </div>
-        </div>
-      </section>
+          {/* Contact for Certificates */}
+<CertificationEnquiry />
       <Footer />
     </div>
   )
