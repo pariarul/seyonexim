@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="min-h-screen animated-gradient">
       <Router>
-        
         <ThreeBackground />
         <Sidebar />
 <ContactBox />

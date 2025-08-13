@@ -143,7 +143,7 @@ export default function Sidebar() {
               </div>
               <div className="flex items-center text-sm">
                 <Phone size={16} color={green} className="mr-3" />
-                <span>+91 9363586810</span>
+                <span>+91 9363586810 ,+91 8508053419</span>
               </div>
               <div className="flex items-center text-sm">
                 <MapPin size={36} color={green} className="mr-3" />
@@ -227,7 +227,7 @@ export default function Sidebar() {
               </div>
               <div className="flex items-center text-xs">
                 <Phone size={12} color={green} className="mr-2" />
-                <span>+91 9363586810</span>
+                <span>+91 9363586810 ,+91 8508053419</span>
               </div>
               <div className="flex items-center text-xs">
                 <MapPin size={22} color={green} className="mr-2" />
