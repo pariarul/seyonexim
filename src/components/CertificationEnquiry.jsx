@@ -3,7 +3,7 @@
 import React from "react"
 
 export default function CertificationEnquiry() {
-  const phoneNumber = "919876543210" // Replace with your number in international format
+  const phoneNumber = "8508053419" // Replace with your number in international format
   const message = "Hello, I'm interested in certification details"
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 

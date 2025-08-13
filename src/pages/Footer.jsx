@@ -82,7 +82,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={20} className="text-green-700 flex-shrink-0" />
-              1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamil nadu - 624619
+              1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , TamilNadu , PIN 624619
             </li>
           </ul>
         </div>

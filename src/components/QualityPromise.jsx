@@ -34,7 +34,7 @@ export default function QualityPromise(){
               </div>
               <h3 className="text-xl font-bold text-green-700 mb-3">Quality Certified</h3>
               <p className="text-black">
-                ISO 22000, HACCP, and organic certifications ensure premium quality standards.
+                 HACCP, and organic certifications ensure premium quality standards.
               </p>
             </div>
 

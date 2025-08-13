@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Fair Trade Certified",
+    "type": "Ethical Trading",
+    "issuer": "Fair Trade USA",
+    "validUntil": "June 2025",
+    "description": "Ensures fair wages and working conditions for farmers and workers in our supply chain.",
+    "icon": "Globe",
+    "image": "../public/certificate/Rcmc_page-0001.jpg",
+    "pdf": "../public/certificate/Rcmc.pdf",
+    "scope": ["Fair Wages", "Worker Rights", "Community Development", "Environmental Protection"]
+  },
+  {
+    "name": "GST Registration",
+    "type": "Tax Registration",
+    "issuer": "Government of India - GST Network",
+    "validUntil": "Not Applicable",
+    "description": "Registered under GST for legal trade within India, enabling compliance with tax regulations.",
+    "icon": "FileText",
+    "image": "../public/certificate/GST_page-0001.jpg",
+    "pdf": "../public/certificate/GST.pdf",
+    "scope": ["GSTIN: 33AFNFS1404E1ZC", "Regular Taxpayer", "Applicable from 14 Feb 2025"]
+  },
+  {
+    "name": "FSSAI License",
+    "type": "Food Safety License",
+    "issuer": "Food Safety and Standards Authority of India",
+    "validUntil": "29 July 2026",
+    "description": "Authorisation to trade, retail, and export food products as per the Food Safety and Standards Act, 2006.",
+    "icon": "ShieldCheck",
+    "image": "../public/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM_page-0001.jpg",
+    "pdf": "../public/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM.pdf",
+    "scope": ["License No: 12425997000467", "Trade/Retail/Export", "Issued 30 July 2025"]
+  },
+  {
+    "name": "Udyam Registration",
+    "type": "MSME Certification",
+    "issuer": "Ministry of Micro, Small and Medium Enterprises, Govt. of India",
+    "validUntil": "No Expiry",
+    "description": "Recognized as a Micro Enterprise under MSME for availing government benefits and schemes.",
+    "icon": "Award",
+    "image": "../public/certificate/Seyonexim MSME_page-0001.jpg",
+    "pdf": "../public/certificateassets/Seyonexim MSME.pdf",
+    "scope": ["Udyam No: UDYAM-TN-06-0096308", "Registered 09 June 2025", "Micro Enterprise - Services"]
+  },
+  {
+    "name": "Importer Exporter Code (IEC)",
+    "type": "Export/Import License",
+    "issuer": "Directorate General of Foreign Trade, Govt. of India",
+    "validUntil": "No Expiry",
+    "description": "IEC number for legally conducting import and export business from India.",
+    "icon": "Globe",
+    "image": "../public/certificate/IEC_page-0001.jpg",
+    "pdf": "../public/certificate/IEC.pdf",
+    "scope": ["IEC: AFNFS1404E", "Issued 02 June 2025", "Registered Office: Oddanchatram, Tamil Nadu"]
+  }
+]

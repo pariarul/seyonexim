@@ -147,7 +147,7 @@ export default function Sidebar() {
               </div>
               <div className="flex items-center text-sm">
                 <MapPin size={36} color={green} className="mr-3" />
-                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamilnadu -624619</span>
+                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamilnadu , PIN 624619</span>
               </div>
               <div className="flex items-center text-sm">
                 <Globe size={16} color={green} className="mr-3" />
@@ -231,7 +231,7 @@ export default function Sidebar() {
               </div>
               <div className="flex items-center text-xs">
                 <MapPin size={22} color={green} className="mr-2" />
-                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , Tamil nadu - 624619</span>
+                <span>1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , TamilNadu , PIN 624619</span>
               </div>
             </div>
           </div>

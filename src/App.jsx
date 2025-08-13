@@ -4,7 +4,7 @@ import ThreeBackground from "./components/ThreeBackground"
 
 import AboutPage from "./pages/AboutPage"
 import ProductsPage from "./pages/ProductsPage"
-import CertificatesPage from "./pages/CertificatesPage"
+import CertificatesPage from "./pages/Certificates/CertificatesPage"
 
 import HomePage from "./pages/Home/HomePage"
 import ContactBox from "./components/ContectBox"

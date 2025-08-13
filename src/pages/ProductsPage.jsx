@@ -39,6 +39,16 @@ export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState(null)
   // State to control product detail modal
   const [detailProduct, setDetailProduct] = useState(null)
+  // State to control product detail modal
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  product: selectedProduct,
+  phone: "",
+  message: ""
+});
+
+// useEffect to initialize GSAP
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
@@ -74,19 +84,65 @@ export default function ProductsPage() {
     return () => ctx.revert()
   }, [])
 
-  useEffect(() => {
-    let filtered = allSpices
-    if (selectedCategory !== "All") {
-      filtered = filtered.filter((spice) => spice.category === selectedCategory)
-    }
-    setFilteredSpices(filtered)
-  }, [selectedCategory])
-
-  const handleEnquirySubmit = (e) => {
-    e.preventDefault()
-    alert(`Enquiry sent for product: ${selectedProduct}`)
-    setSelectedProduct(null)
+// Filter spices whenever selectedCategory or allSpices changes
+useEffect(() => {
+  if (selectedCategory === "All") {
+    setFilteredSpices(allSpices);
+  } else {
+    const filtered = allSpices.filter(spice => spice.category === selectedCategory);
+    setFilteredSpices(filtered);
   }
+}, [selectedCategory, allSpices]);
+
+// Update formData.product whenever selectedProduct changes
+useEffect(() => {
+  setFormData(prev => ({ ...prev, product: selectedProduct || "" }));
+}, [selectedProduct]);
+
+
+
+
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+
+const handleEnquirySubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.product || !formData.phone || !formData.message) {
+    alert("Please fill in all the required fields.");
+    return;
+  }
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbyd5RHfzXIkHfGpKH2rCr79v7rPBjX0Kjm_QfiDhSRaR4kITyxeDttIbkC-EpViUf5hbg/exec", {
+  method: "POST",
+  headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+  body: new URLSearchParams(formData).toString(),
+    });
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+      alert("Enquiry sent successfully!");
+      setSelectedProduct(null);
+      setFormData({
+        name: "",
+        email: "",
+        product: "",
+        phone: "",
+        message: ""
+      });
+    } else {
+      alert("Failed to send enquiry: " + result.message);
+    }
+  } catch (error) {
+    alert("Error sending enquiry: " + error.message);
+  }
+};
+
+
 
   return (
     <div className="bg-white">
@@ -281,34 +337,47 @@ export default function ProductsPage() {
         Product Enquiry
       </h3>
       <form className="grid grid-cols-1 gap-4 md:grid-cols-2" onSubmit={handleEnquirySubmit}>
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="p-3 border border-green-300 rounded-lg w-full"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="p-3 border border-green-300 rounded-lg w-full"
-          required
-        />
-        <input
-          type="text"
-          value={selectedProduct}
-          readOnly
-          className="p-3 border border-green-300 rounded-lg w-full bg-gray-200"
-        />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          className="p-3 border border-green-300 rounded-lg w-full"
-        />
-        <textarea
-          placeholder="Your Message"
-          className="md:col-span-2 p-3 border border-green-300 rounded-lg w-full"
-          rows={4}
-        />
+         <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    className="p-3 border border-green-300 rounded-lg w-full"
+    value={formData.name}
+    onChange={handleInputChange}
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    className="p-3 border border-green-300 rounded-lg w-full"
+    value={formData.email}
+    onChange={handleInputChange}
+    required
+  />
+  <input
+    type="text"
+    name="product"
+    value={selectedProduct}
+    readOnly
+    className="p-3 border border-green-300 rounded-lg w-full bg-gray-200"
+  />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    className="p-3 border border-green-300 rounded-lg w-full"
+    value={formData.phone}
+    onChange={handleInputChange}
+  />
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    className="md:col-span-2 p-3 border border-green-300 rounded-lg w-full"
+    rows={4}
+    value={formData.message}
+    onChange={handleInputChange}
+  />
         <div className="md:col-span-2 flex flex-col md:flex-row gap-4 justify-end">
           <button
             type="submit"
@@ -332,7 +401,7 @@ export default function ProductsPage() {
 
 
         {/* Product Details Modal */}
-{/* Product Details Modal */}
+
 {detailProduct && (
   <div
     className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
