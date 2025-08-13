@@ -16,7 +16,7 @@ export default function ContactSection() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const WEB_APP_URL =
-    "https://script.google.com/macros/s/AKfycbzhyMljSWBa-pyDoxnjmB7Ks93PAKVJEWx8IKb_dgSlcJA25k6JW3BET2qEtMv6SP13Kw/exec";
+    "";
 
   const validate = () => {
     const newErrors = {};

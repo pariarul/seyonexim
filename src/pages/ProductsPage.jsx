@@ -8,8 +8,6 @@ import {
   Package,
   Filter,
   Award,
-  Leaf,
-  Sparkles,
   Eye,
   ShoppingCart,
   Mail,
@@ -116,7 +114,7 @@ const handleEnquirySubmit = async (e) => {
   }
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbyd5RHfzXIkHfGpKH2rCr79v7rPBjX0Kjm_QfiDhSRaR4kITyxeDttIbkC-EpViUf5hbg/exec", {
+    const response = await fetch("", {
   method: "POST",
   headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
   body: new URLSearchParams(formData).toString(),
@@ -153,7 +151,7 @@ const handleEnquirySubmit = async (e) => {
       >
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8 border border-gray-400">
-            <Sparkles size={20} color="green" />
+        
             <span className="text-black font-medium">Premium Spice Collection</span>
           </div>
 

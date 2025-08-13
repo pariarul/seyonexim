@@ -117,7 +117,7 @@ export default function AboutPage() {
       className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8"
       style={{ border: "1px solid rgba(107, 114, 128, 0.3)" }}
     >
-      <Sparkles size={20} color="green" />
+      
       <span className="text-black font-medium">Our Journey Begins – 2024</span>
     </div>
 

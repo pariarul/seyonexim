@@ -58,7 +58,7 @@ export default function CertificatesPage() {
       >
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/70 backdrop-blur-md rounded-full mb-8 border border-green-200 shadow">
-            <Sparkles size={20} color="green" />
+          
             <span className="text-black font-medium">Quality Certifications & Standards</span>
           </div>
           <h1 className="certificates-hero-title text-5xl md:text-7xl font-playfair font-bold mb-8 text-green-600">

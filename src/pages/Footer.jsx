@@ -1,11 +1,20 @@
 "use client"
 
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Copyright } from "lucide-react"
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   // Define color constants
   const green = "#065f46" // dark green used in your theme
   const textDark = "#111827" // typical dark text color
+
+    const links = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "Certificates", path: "/certificates" },
+
+  ];
 
   return (
     <footer className="bg-white border-t border-black text-black">
@@ -55,18 +64,21 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h4 className="text-xl font-bold text-green-700 mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-gray-800">
-            {["Home", "About Us", "Products", "Contact"].map((link) => (
-              <li key={link}>
-                <a href="#" className="hover:text-green-700 transition">
-                  {link}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+ <div>
+      <h4 className="text-xl font-bold text-green-700 mb-4">Quick Links</h4>
+      <ul className="space-y-2 text-gray-800">
+        {links.map((link) => (
+          <li key={link.name}>
+            <Link
+              to={link.path}
+              className="hover:text-green-700 transition"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
 
         {/* Contact Info */}
         <div>
