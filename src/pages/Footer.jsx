@@ -106,7 +106,7 @@ export default function Footer() {
         style={{ backgroundColor: "#00A86B", color: "#FFFFFF" }} // emerald green bg, white text
       >
         <Copyright size={16} />
-        <span>{new Date().getFullYear()} SpiceVault. All Rights Reserved.</span>
+        <span>{new Date().getFullYear()} SeyonExim. All Rights Reserved.</span>
       </div>
     </footer>
   )
