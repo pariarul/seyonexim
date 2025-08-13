@@ -114,7 +114,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="font-semibold text-black">Email Us</div>
-                <div className="text-black">hello@spicevault.com</div>
+                <div className="text-black">support@seyonexim.com</div>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -123,7 +123,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="font-semibold text-black">Call Us</div>
-                <div className="text-black">+91 98765 43210</div>
+                <div className="text-black">+91 9363586810 ,+91 8508053419</div>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -132,7 +132,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="font-semibold text-black">Visit Us</div>
-                <div className="text-black">Mumbai, Maharashtra, India</div>
+                <div className="text-black">1/15A Markampatti Road Veriyapur, Oddanchatram , Dindigul , TamilNadu , PIN 624619</div>
               </div>
             </div>
           </div>
