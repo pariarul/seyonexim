@@ -8,26 +8,27 @@ import {
 const ComplianceStandards = () => {
 
     // Compliance Standards
-    const complianceStandards = [
-      {
-        name: "FDA Registration",
-        description:
-          "Registered with US Food and Drug Administration for food facility operations",
-        icon: Shield,
-      },
-      {
-        name: "EU Organic Regulation",
-        description:
-          "Compliant with European Union organic production and labeling regulations",
-        icon: Leaf,
-      },
-      {
-        name: "FSSAI License",
-        description:
-          "Licensed by Food Safety and Standards Authority of India",
-        icon: CheckCircle,
-      },
-    ]
+const complianceStandards = [
+  {
+    name: "FSSAI License",
+    description:
+      "Licensed by the Food Safety and Standards Authority of India for safe food handling and sales",
+    icon: CheckCircle,
+  },
+  {
+    name: "AGMARK Certification",
+    description:
+      "Certified under AGMARK standards by the Directorate of Marketing & Inspection, Government of India",
+    icon: Shield,
+  },
+  {
+    name: "BIS Certification",
+    description:
+      "Quality certified by the Bureau of Indian Standards for product safety and compliance",
+    icon:Leaf,
+  },
+];
+
   return (
       <section className="px-6 py-20 bg-white">
         <div className="max-w-6xl mx-auto">

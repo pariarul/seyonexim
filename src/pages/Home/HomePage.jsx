@@ -40,6 +40,7 @@ export default function HomePage() {
         opacity: 0,
         scrollTrigger: { trigger: formRef.current, start: "top 70%" },
       })
+  
     }, heroRef)
 
     return () => ctx.revert()

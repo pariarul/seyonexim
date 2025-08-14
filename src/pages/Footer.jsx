@@ -90,7 +90,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Phone size={20} className="text-green-700 flex-shrink-0" />
-              <a href="tel:+919876543210" className="hover:underline">+91 9363586810 ,+91 8508053419</a>
+              <a href="tel:+919876543210" className="hover:underline">+91 8508053419 ,+91 9363586810 </a>
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={20} className="text-green-700 flex-shrink-0" />
