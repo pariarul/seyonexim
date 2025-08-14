@@ -7,6 +7,7 @@ import CertificationEnquiry from "../../components/CertificationEnquiry";
 const allSpices = jsondata;
 
 export default function SpiceCatalogue() {
+  const GOOGLE_SCRIPT_URL_ENQUIRY = "https://script.google.com/macros/s/AKfycbybzBbSZ-ADY4tYLXRohbFOgKpqRq5Vq0SA-8qeOYs9Jq-1C_KAtxWYyUjmBKavgM0o8g/exec";
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -17,16 +18,25 @@ export default function SpiceCatalogue() {
   });
 
   const formRef = useRef(null);
-
+const [isSubmitting, setIsSubmitting] = useState(false);
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const initialState = {
+    name: "",
+    email: "",
+    product: "",
+    phone: "",
+    message: ""
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     try {
       const res = await fetch(
-        "https://script.google.com/macros/s/AKfycbybzBbSZ-ADY4tYLXRohbFOgKpqRq5Vq0SA-8qeOYs9Jq-1C_KAtxWYyUjmBKavgM0o8g/exec", // Replace with your /exec URL
+        GOOGLE_SCRIPT_URL_ENQUIRY,
         {
           method: "POST",
           mode: "no-cors", // bypass CORS since Google doesn't return proper headers
@@ -41,19 +51,12 @@ export default function SpiceCatalogue() {
 if(!res.ok){
   throw new Error(`HTTP error! status: ${res.status}`);
 }
-
-      alert("Enquiry sent successfully!");
-      setSelectedProduct(null);
-      setFormData({
-        name: "",
-        email: "",
-        product: "",
-        phone: "",
-        message: ""
-      });
     } catch (error) {
       console.error("Error sending enquiry:", error);
-      alert("Failed to send enquiry.");
+ 
+    } finally {
+      setFormData(initialState);
+      setIsSubmitting(false);
     }
   };
 
@@ -159,13 +162,15 @@ if(!res.ok){
                   <div className="md:col-span-2 flex flex-col md:flex-row gap-4 justify-end">
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 flex items-center justify-center gap-2"
                     >
-                      <Mail size={18} /> Send Enquiry
+                      <Mail size={18} />{isSubmitting ? "Sending ..." : "Send "}
                     </button>
                     <button
                       type="button"
                       onClick={() => setSelectedProduct(null)}
+                      
                       className="px-6 py-3 border border-green-300 rounded-lg hover:bg-green-50 text-black"
                     >
                       Cancel

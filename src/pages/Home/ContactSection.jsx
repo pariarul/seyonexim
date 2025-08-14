@@ -26,14 +26,21 @@ export default function ContactSection() {
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email.trim())) {
       newErrors.email = "Invalid email address";
     }
-    if (formData.phone && !/^\d{10}$/.test(formData.phone.trim())) {
-      newErrors.phone = "Phone must be 10 digits";
-    }
     if (formData.quantity && !/^\d+$/.test(formData.quantity.trim())) {
       newErrors.quantity = "Quantity must be a number";
     }
     return newErrors;
   };
+
+const initialState = {
+  company: "",
+  contactPerson: "",
+  email: "",
+  phone: "",
+  product: "",
+  quantity: "",
+  message: "",
+};
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -43,46 +50,33 @@ const handleSubmit = async (e) => {
     setErrors(validationErrors);
     return;
   }
+
   setIsSubmitting(true);
   setErrors({});
 
   try {
-    const response = await fetch(
-     GOOGLE_SCRIPT_URL ,
-      {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      }
-    );
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    });
 
-    const result = await response.json();
-
-    if (result.status === "success") {
+    if (response.ok) {
       setShowSuccess(true);
-      setFormData({
-        company: "",
-        contactPerson: "",
-        email: "",
-        phone: "",
-        product: "",
-        quantity: "",
-        message: "",
-      });
     } else {
-      console.error("Server returned an error:", result);
-    }
+      console.error("Error sending data:", response.statusText);
+    } 
   } catch (error) {
     console.error("Error sending data:", error);
   } finally {
     setIsSubmitting(false);
+    setShowSuccess(true);
+      setFormData(initialState); // ✅ Clear form
   }
 };
+
 
   const updateFormData = (field, value) => setFormData((prev) => ({ ...prev, [field]: value }));
 
