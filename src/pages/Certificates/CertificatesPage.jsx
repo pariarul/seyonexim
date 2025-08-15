@@ -144,13 +144,7 @@ export default function CertificatesPage() {
                     >
                       View
                     </button>
-                    <a
-                      href={cert.pdf}
-                      download
-                      className="w-full sm:flex-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors text-center"
-                    >
-                      Download
-                    </a>
+
                   </div>
                 </div>
               );
@@ -193,15 +187,6 @@ export default function CertificatesPage() {
                 <ChevronRight size={20} />
               </button>
             </div>
-
-            {/* Download in modal */}
-            <a
-              href={Jsoncertificates[currentIndex].pdf}
-              download
-              className="w-full inline-flex justify-center items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-            >
-              <Download size={18} className="mr-2" /> Download PDF
-            </a>
           </div>
         </div>
       )}

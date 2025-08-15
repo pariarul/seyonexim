@@ -46,7 +46,6 @@ const [isSubmitting, setIsSubmitting] = useState(false);
             product: selectedProduct
           })
         }
-        
       );
 if(!res.ok){
   throw new Error(`HTTP error! status: ${res.status}`);
@@ -66,7 +65,7 @@ if(!res.ok){
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-green-800 font-playfair">
-              Our Premium Spice Collection
+              Our Premium Indian Spice Collection
             </h2>
             <p className="text-lg text-black max-w-3xl mx-auto mt-4">
               Bringing rich flavor, aroma, and purity to every dish — sourced and processed with utmost care.

@@ -12,7 +12,7 @@ export default function HeroSection() {
           style={{ border: "1px solid rgba(255,255,255,0.3)" }}
         >
          
-          <span className="font-medium">Premium Spice Exporters Since 2025</span>
+          <span className="font-medium">Premium Spices Exporter Since 2025</span>
         </div>
 
         <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-playfair font-bold mb-8 text-white">
@@ -22,7 +22,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="hero-subtitle text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-white">
-          Premium export-quality spices from India's finest plantations. ISO certified, sustainably sourced, globally
+          Premium export-quality spices from India's finest plantations. We sustainably sourced, globally
           trusted.
         </p>
 

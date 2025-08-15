@@ -28,6 +28,7 @@ const categories = [
 ]
 
 export default function ProductsPage() {
+  const GOOGLE_SCRIPT_URL_ENQUIRY = "https://script.google.com/macros/s/AKfycbybzBbSZ-ADY4tYLXRohbFOgKpqRq5Vq0SA-8qeOYs9Jq-1C_KAtxWYyUjmBKavgM0o8g/exec";
   const heroRef = useRef(null)
   const productsRef = useRef(null)
   const formRef = useRef(null)
@@ -98,47 +99,47 @@ useEffect(() => {
 }, [selectedProduct]);
 
 
+const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const handleChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
 
-const handleInputChange = (e) => {
-  const { name, value } = e.target;
-  setFormData((prev) => ({ ...prev, [name]: value }));
-};
+  const initialState = {
+    name: "",
+    email: "",
+    product: "",
+    phone: "",
+    message: ""
+  };
 
-const handleEnquirySubmit = async (e) => {
-  e.preventDefault();
-
-  if (!formData.name || !formData.email || !formData.product || !formData.phone || !formData.message) {
-    alert("Please fill in all the required fields.");
-    return;
-  }
-
-  try {
-    const response = await fetch("", {
-  method: "POST",
-  headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-  body: new URLSearchParams(formData).toString(),
-    });
-
-    const result = await response.json();
-
-    if (result.status === "success") {
-      alert("Enquiry sent successfully!");
-      setSelectedProduct(null);
-      setFormData({
-        name: "",
-        email: "",
-        product: "",
-        phone: "",
-        message: ""
-      });
-    } else {
-      alert("Failed to send enquiry: " + result.message);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(
+        GOOGLE_SCRIPT_URL_ENQUIRY,
+        {
+          method: "POST",
+          mode: "no-cors", // bypass CORS since Google doesn't return proper headers
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            product: selectedProduct
+          })
+        }
+      );
+if(!res.ok){
+  throw new Error(`HTTP error! status: ${res.status}`);
+}
+    } catch (error) {
+      console.error("Error sending enquiry:", error);
+ 
+    } finally {
+      setFormData(initialState);
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    alert("Error sending enquiry: " + error.message);
-  }
-};
+  };
 
 
 
@@ -152,7 +153,7 @@ const handleEnquirySubmit = async (e) => {
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8 border border-gray-400">
         
-            <span className="text-black font-medium">Premium Spice Collection</span>
+            <span className="text-black font-medium">Premium Spices Collection</span>
           </div>
 
           <h1 className="products-hero-title text-5xl md:text-7xl font-playfair font-bold mb-8 text-green-700">
@@ -321,80 +322,77 @@ const handleEnquirySubmit = async (e) => {
       </section>
 
       {/* Enquiry Form Modal */}
-{selectedProduct && (
-  <div
-    className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
-    onClick={() => setSelectedProduct(null)} // Close on backdrop click
-  >
-    <div
-      className="bg-white border border-green-200 rounded-xl shadow-lg p-6 max-w-lg w-full max-h-[90vh] overflow-auto"
-      onClick={(e) => e.stopPropagation()} // Prevent modal close on form click
-      ref={formRef}
-    >
-      <h3 className="text-2xl font-bold text-black mb-6 text-center md:text-left">
-        Product Enquiry
-      </h3>
-      <form className="grid grid-cols-1 gap-4 md:grid-cols-2" onSubmit={handleEnquirySubmit}>
-         <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    className="p-3 border border-green-300 rounded-lg w-full"
-    value={formData.name}
-    onChange={handleInputChange}
-    required
-  />
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    className="p-3 border border-green-300 rounded-lg w-full"
-    value={formData.email}
-    onChange={handleInputChange}
-    required
-  />
-  <input
-    type="text"
-    name="product"
-    value={selectedProduct}
-    readOnly
-    className="p-3 border border-green-300 rounded-lg w-full bg-gray-200"
-  />
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone Number"
-    className="p-3 border border-green-300 rounded-lg w-full"
-    value={formData.phone}
-    onChange={handleInputChange}
-  />
-  <textarea
-    name="message"
-    placeholder="Your Message"
-    className="md:col-span-2 p-3 border border-green-300 rounded-lg w-full"
-    rows={4}
-    value={formData.message}
-    onChange={handleInputChange}
-  />
-        <div className="md:col-span-2 flex flex-col md:flex-row gap-4 justify-end">
-          <button
-            type="submit"
-            className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 flex items-center justify-center gap-2"
-          >
-            <Mail size={18} /> Send Enquiry
-          </button>
-          <button
-            type="button"
-            onClick={() => setSelectedProduct(null)}
-            className="px-6 py-3 border border-green-300 rounded-lg hover:bg-green-50 text-black"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-)}
+         {selectedProduct && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
+              onClick={() => setSelectedProduct(null)}
+            >
+              <div
+                className="bg-white border border-green-200 rounded-xl shadow-lg p-6 max-w-lg w-full max-h-[90vh] overflow-auto"
+                onClick={e => e.stopPropagation()}
+                ref={formRef}
+              >
+                <h3 className="text-2xl font-bold text-black mb-6 text-center md:text-left">
+                  Product Enquiry
+                </h3>
+                <form className="grid grid-cols-1 gap-4 md:grid-cols-2" onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="p-3 border border-green-300 rounded-lg w-full"
+                    value={formData.name}
+                    onChange={e => handleChange("name", e.target.value)}
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="p-3 border border-green-300 rounded-lg w-full"
+                    value={formData.email}
+                    onChange={e => handleChange("email", e.target.value)}
+                    required
+                  />
+                  <input
+                    type="text"
+                    value={selectedProduct}
+                    readOnly
+                    className="p-3 border border-green-300 rounded-lg w-full bg-gray-200"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="p-3 border border-green-300 rounded-lg w-full"
+                    value={formData.phone}
+                    onChange={e => handleChange("phone", e.target.value)}
+                  />
+                  <textarea
+                    placeholder="Your Message"
+                    className="md:col-span-2 p-3 border border-green-300 rounded-lg w-full"
+                    rows={4}
+                    value={formData.message}
+                    onChange={e => handleChange("message", e.target.value)}
+                  />
+                  <div className="md:col-span-2 flex flex-col md:flex-row gap-4 justify-end">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 flex items-center justify-center gap-2"
+                    >
+                      <Mail size={18} />{isSubmitting ? "Sending ..." : "Send "}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProduct(null)}
+                      
+                      className="px-6 py-3 border border-green-300 rounded-lg hover:bg-green-50 text-black"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
 
 
 

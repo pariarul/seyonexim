@@ -6,9 +6,9 @@ import { gsap } from "gsap"
 import { Home, Info, Package, Award, Menu, X, Mail, Phone, MapPin, Globe } from "lucide-react"
 
 const navigation = [
-  { name: "Home", href: "/", icon: Home, description: "Premium spice showcase" },
+  { name: "Home", href: "/", icon: Home, description: "Premium spices showcase" },
   { name: "About", href: "/about", icon: Info, description: "Our story & mission" },
-  { name: "Products", href: "/products", icon: Package, description: "Spice collection" },
+  { name: "Products", href: "/products", icon: Package, description: "Spices collection" },
   { name: "Certificates", href: "/certificates", icon: Award, description: "Quality standards" },
 ]
 

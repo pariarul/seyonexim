@@ -156,7 +156,7 @@ export default function AboutPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-black">Global leadership in spice quality</span>
+                  <span className="text-black">Global leadership in spices quality</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-black">Innovation in spice processing</span>
+                  <span className="text-black">Innovation in spices processing</span>
                 </div>
               </div>
             </div>
