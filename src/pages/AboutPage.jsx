@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Target, Eye, Users, Award, Globe, Leaf, Shield, Heart, Sparkles } from "lucide-react"
 import Footer from "./Footer"
 import CertificationEnquiry from "../components/CertificationEnquiry"
-
+import BackGroudImagd from "../../public/assets/Turmeric/03.jpg";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
@@ -111,10 +111,16 @@ export default function AboutPage() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-<section ref={heroRef} className="min-h-screen flex items-center justify-center px-6 py-20">
+<section ref={heroRef}
+      style={{
+        backgroundImage:`url(${BackGroudImagd})`, // 🔹 Change to your image path or external URL
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+ className="min-h-screen flex items-center justify-center px-6 py-20">
   <div className="max-w-6xl mx-auto text-center">
     <div
-      className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8"
+      className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full mb-8 bg-white"
       style={{ border: "1px solid rgba(107, 114, 128, 0.3)" }}
     >
       
@@ -127,7 +133,7 @@ export default function AboutPage() {
       <span className="text-black">Seyon Exim</span>
     </h1>
 
-    <p className="about-hero-subtitle text-xl md:text-2xl text-black max-w-4xl mx-auto">
+    <p className="about-hero-subtitle text-xl md:text-2xl text-white max-w-4xl mx-auto">
       We’re a young and passionate spices startup, bringing the authentic flavors of India to the world.  
       Born in 2024, we aim to redefine spice sourcing with freshness, fairness, and a dash of innovation.
     </p>

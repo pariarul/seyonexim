@@ -1,11 +1,18 @@
 "use client"
 import { useNavigate } from "react-router-dom";
 import {  ArrowRight } from "lucide-react"
+import BackGroudImagd from "../../../public/assets/BG-3.jpg";
 
 export default function HeroSection() {
   const navigate = useNavigate();
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-green-600">
+    <section
+          style={{
+            backgroundImage:`url(${BackGroudImagd})`, // 🔹 Change to your image path or external URL
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+     className="min-h-screen flex items-center justify-center px-6 py-20 bg-green-600">
       <div className="max-w-6xl mx-auto text-center">
         <div
           className="hero-badge inline-flex items-center gap-2 px-6 py-3 rounded-full mb-8 bg-green-800 text-white"

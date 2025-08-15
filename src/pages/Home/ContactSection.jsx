@@ -90,12 +90,12 @@ export default function ContactSection() {
 
   return (
     <section
-      className="py-20 px-6 relative"
-      style={{
-        backgroundImage:`url(${BackGroudImagd})`, // 🔹 Change to your image path or external URL
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="py-20 px-6 relative bg-green-600"
+          style={{
+            backgroundImage:`url(${BackGroudImagd})`, // 🔹 Change to your image path or external URL
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
     >
       {/* Overlay */}
       <div className="absolute inset-0  bg-opacity-80"></div>
