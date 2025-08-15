@@ -4,7 +4,7 @@ import BackGroudImagd from "../../../public/assets/BG-2.jpg";
 
 export default function ContactSection() {
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbybzBbSZ-ADY4tYLXRohbFOgKpqRq5Vq0SA-8qeOYs9Jq-1C_KAtxWYyUjmBKavgM0o8g/exec";
+    "https://script.google.com/macros/s/AKfycbxmWYyGNbgIo9lRkWepWqwVTfAvBT6exyUA6NwTCFM0ptQSgsa_igpfuVyLW3btXEK17w/exec";
 
   const [formData, setFormData] = useState({
     company: "",
@@ -81,6 +81,9 @@ export default function ContactSection() {
     } finally {
       setIsSubmitting(false);
       setShowSuccess(true);
+        setTimeout(() => {
+    setShowSuccess(false);
+  }, 3000);
       setFormData(initialState); // ✅ Clear form
     }
   };

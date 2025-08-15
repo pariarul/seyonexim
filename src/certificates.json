@@ -6,8 +6,8 @@
     "validUntil": "June 2028",
     "description": "Ensures fair wages and working conditions for farmers and workers in our supply chain.",
     "icon": "Globe",
-    "image": "../public/certificate/Rcmc_page-0001.jpg",
-    "pdf": "../public/certificate/Rcmc.pdf",
+    "image": "/certificate/Rcmc_page-0001.jpg",
+    "pdf": "/certificate/Rcmc.pdf",
     "scope": ["Fair Wages", "Worker Rights", "Community Development", "Environmental Protection"]
   },
   {
@@ -17,8 +17,8 @@
     "validUntil": "Not Applicable",
     "description": "Registered under GST for legal trade within India, enabling compliance with tax regulations.",
     "icon": "FileText",
-    "image": "../public/certificate/GST_page-0001.jpg",
-    "pdf": "../public/certificate/GST.pdf",
+    "image": "/certificate/GST_page-0001.jpg",
+    "pdf": "/certificate/GST.pdf",
     "scope": ["GSTIN: 33AFNFS1404E1ZC", "Regular Taxpayer", "Applicable from 14 Feb 2025"]
   },
   {
@@ -28,8 +28,8 @@
     "validUntil": "29 July 2026",
     "description": "Authorisation to trade, retail, and export food products as per the Food Safety and Standards Act, 2006.",
     "icon": "ShieldCheck",
-    "image": "../public/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM_page-0001.jpg",
-    "pdf": "../public/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM.pdf",
+    "image": "/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM_page-0001.jpg",
+    "pdf": "/certificate/FSSAI CENTRAL LICENSE - SEYON EXIM.pdf",
     "scope": ["License No: 12425997000467", "Trade/Retail/Export", "Issued 30 July 2025"]
   },
   {
@@ -39,8 +39,8 @@
     "validUntil": "No Expiry",
     "description": "Recognized as a Micro Enterprise under MSME for availing government benefits and schemes.",
     "icon": "Award",
-    "image": "../public/certificate/Seyonexim MSME_page-0001.jpg",
-    "pdf": "../public/certificateassets/Seyonexim MSME.pdf",
+    "image": "/certificate/Seyonexim MSME_page-0001.jpg",
+    "pdf": "/certificateassets/Seyonexim MSME.pdf",
     "scope": ["Udyam No: UDYAM-TN-06-0096308", "Registered 09 June 2025", "Micro Enterprise - Services"]
   },
   {
@@ -50,8 +50,8 @@
     "validUntil": "No Expiry",
     "description": "IEC number for legally conducting import and export business from India.",
     "icon": "Globe",
-    "image": "../public/certificate/IEC_page-0001.jpg",
-    "pdf": "../public/certificate/IEC.pdf",
+    "image": "/certificate/IEC_page-0001.jpg",
+    "pdf": "/certificate/IEC.pdf",
     "scope": ["IEC: AFNFS1404E", "Issued 02 June 2025", "Registered Office: Oddanchatram, Tamil Nadu"]
   }
 ]
