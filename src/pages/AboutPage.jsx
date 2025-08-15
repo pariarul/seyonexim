@@ -128,7 +128,7 @@ export default function AboutPage() {
     </h1>
 
     <p className="about-hero-subtitle text-xl md:text-2xl text-black max-w-4xl mx-auto">
-      We’re a young and passionate spice startup, bringing the authentic flavors of India to the world.  
+      We’re a young and passionate spices startup, bringing the authentic flavors of India to the world.  
       Born in 2024, we aim to redefine spice sourcing with freshness, fairness, and a dash of innovation.
     </p>
   </div>
